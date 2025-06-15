@@ -207,31 +207,44 @@
         <a href="index.html" class="btn">⬅ Back</a>
     </div>
 
-    <script>
-        document.addEventListener("mousemove", (e) => {
-            for (let i = 0; i < 5; i++) {
-                const trail = document.createElement("div");
-                trail.className = "trail";
+   <script>
+document.addEventListener("mousemove", (e) => {
+  const baseX = e.pageX;
+  const baseY = e.pageY;
+  const time = Date.now() * 0.0060; // Used in trigonometry
 
-                const offsetX = Math.random() * 12 - 6;
-                const offsetY = Math.random() * 12 - 6;
+  for (let i = 0; i < 6; i++) {
+    const trail = document.createElement("div");
+    trail.className = "trail";
 
-                trail.style.left = `${e.pageX + offsetX}px`;
-                trail.style.top = `${e.pageY + offsetY}px`;
-                trail.style.width = `${6 + Math.random() * 8}px`;
-                trail.style.height = trail.style.width;
+    // Trig-based swirl
+    const radius = 20 + Math.sin(time + i) * 15;
+    const angle = i * (Math.PI / 4) + time;
+    const offsetX = Math.cos(angle) * radius;
+    const offsetY = Math.sin(angle) * radius;
 
-                document.body.appendChild(trail);
+    // Position
+    trail.style.left = `${baseX + offsetX}px`;
+    trail.style.top = `${baseY + offsetY}px`;
 
-                setTimeout(() => {
-                    trail.style.opacity = 0;
-                    setTimeout(() => {
-                        trail.remove();
-                    }, 300);
-                }, 500);
-            }
-        });
-    </script>
+    // Size pulsing
+    const size = 8 + Math.sin(time + i * 0.5) * 5;
+    trail.style.width = `${size}px`;
+    trail.style.height = `${size}px`;
+
+    // Color rotation (HSL)
+    const hue = (angle * 180 / Math.PI + 360) % 360;
+    trail.style.background = `hsl(${hue}, 100%, 70%)`;
+
+    document.body.appendChild(trail);
+
+    setTimeout(() => {
+      trail.style.opacity = 0;
+      setTimeout(() => trail.remove(), 500);
+    }, 600);
+  }
+});
+</script>
 </body>
 
 </html>
