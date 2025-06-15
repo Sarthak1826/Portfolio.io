@@ -241,8 +241,8 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-  </style>
-  <style>
+
+  
   .spline-overlay-block {
     position: fixed;
     bottom: 10px; /* adjust based on where watermark shows */
@@ -253,19 +253,25 @@ nav ul li a:hover::after {
     pointer-events: auto;
     background: transparent;
   }
-</style>
+ .card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.card-link:hover {
+  transform: scale(1.05);
+}
 
+ </style>
 <div class="spline-overlay-block"></div>
 
 </head>
 <body>
   <div id="spline-bg">
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js" async></script>
-  <spline-viewer hint loading-anim-type="spinner-small-dark" url="https://prod.spline.design/GEVtmRB4s5YvRkyE/scene.splinecode">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAzCAYAAABhaa0bAAAAAXNSR0IArs4c6QAAAMlJREFUeF7t1cEJADAMw8B6/6Fb6BT3UCYQEibbdk/HGFhBmBYfpCBWj4JgPQpSEM0AxtMPKQhmAMNpIQXBDGA4LaQgmAEMp4UUBDOA4bSQgmAGMJwWUhDMAIbTQgqCGcBwWkhBMAMYTgspCGYAw2khBcEMYDgtpCCYAQynhRQEM4DhtJCCYAYwnBZSEMwAhtNCCoIZwHBaSEEwAxhOCykIZgDDaSEFwQxgOC2kIJgBDKeFFAQzgOG0kIJgBjCcFlIQzACG00KwIA9jwjOaI5s0mQAAAABJRU5ErkJggg==" alt="Spline preview" style="width: 100%; height: 100%;" />
-  </spline-viewer>
-</div>
-
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/GEVtmRB4s5YvRkyE/scene.splinecode" loading-anim-type="spinner-small-dark"></spline-viewer>
+  </div>
 
   <nav>
     <div class="logo">Portfolio</div>
@@ -274,7 +280,7 @@ nav ul li a:hover::after {
       
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#skills">My Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -303,16 +309,32 @@ nav ul li a:hover::after {
 
   <section id="skills">
     <div class="section-content">
-      <h1>Skills</h1>
-      <div class="card"><p>💻 HTML</p></div>
-      <div class="card"><p>🎨 CSS</p></div>
-      <div class="card"><p>✨ JavaScript</p></div>
-      <div class="card"><p>🔧 C</p></div>
-      <div class="card"><p>🚀 C++</p></div>
-      <div class="card"><p>☕ Java</p></div>
-      <div class="card"><p>🐍 Python</p></div>
-      <div class="card"><p>🗃️ DBMS</p></div>
-    </div>
+      <h1>My Skills</h1>
+  <a href="html.html" class="card-link">
+  <div class="card"><p>💻 HTML</p></div>
+</a>
+<a href="css.html" class="card-link">
+  <div class="card"><p>🎨 CSS</p></div>
+</a>
+<a href="javascript.html" class="card-link">
+  <div class="card"><p>✨ JavaScript</p></div>
+</a>
+<a href="c.html" class="card-link">
+  <div class="card"><p>🔧 C</p></div>
+</a>
+<a href="cpp.html" class="card-link">
+  <div class="card"><p>🚀 C++</p></div>
+</a>
+<a href="java.html" class="card-link">
+  <div class="card"><p>☕ Java</p></div>
+</a>
+<a href="python.html" class="card-link">
+  <div class="card"><p>🐍 Python</p></div>
+</a>
+<a href="dbms.html" class="card-link">
+  <div class="card"><p>🗃️ DBMS</p></div>
+</a>
+
   </section>
 
   <section id="contact">
@@ -325,7 +347,7 @@ nav ul li a:hover::after {
         <button type="submit">Send</button>
       </form>
       <div class="socials">
-        <p>📱 +91 1234567890</p>
+        <p>📱 +91 1234567890</p>0
         <a href="https://www.instagram.com/sarth.zzzzzz/" target="_blank">Instagram</a>
       </div>
     </div>
@@ -338,6 +360,5 @@ nav ul li a:hover::after {
     }
     
   </script>
-  
 </body>
 </html>
